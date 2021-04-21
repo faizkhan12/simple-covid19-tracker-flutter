@@ -24,28 +24,30 @@ class Stats extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            StatsRow(
-              colour: kColourPieSick,
-              label: 'Sick',
-              number: sickNumber,
-              percentage: sickPercentage,
-            ),
-            StatsRow(
-              colour: kColourPieRecovered,
-              label: 'Recovered',
-              number: recoveredNumber,
-              percentage: recoveredPercentage,
-            ),
-            StatsRow(
-              colour: kColourPieDead,
-              label: 'Dead',
-              number: deadNumber,
-              percentage: deadPercentage,
-            ),
-          ],
+        Flexible(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              StatsRow(
+                colour: kColourPieSick,
+                label: 'Sick',
+                number: sickNumber,
+                percentage: sickPercentage,
+              ),
+              StatsRow(
+                colour: kColourPieRecovered,
+                label: 'Recovered',
+                number: recoveredNumber,
+                percentage: recoveredPercentage,
+              ),
+              StatsRow(
+                colour: kColourPieDead,
+                label: 'Dead',
+                number: deadNumber,
+                percentage: deadPercentage,
+              ),
+            ],
+          ),
         ),
       ],
     );

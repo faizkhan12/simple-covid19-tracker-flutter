@@ -4,9 +4,9 @@ import 'dart:convert';
 import 'package:covid_app/utilities/constants.dart';
 import 'package:covid_app/models/Districts.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:covid_app/screens/districtwise.dart';
+import 'package:covid_app/screens/district_screen.dart';
 
-class UserList extends StatelessWidget {
+class StateScreen extends StatelessWidget {
   final String apiUrl = "https://api.covid19india.org/data.json";
 
   Future<List<dynamic>> fetchUsers() async {
@@ -70,7 +70,7 @@ class UserList extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => DistrictPage(
+                                      builder: (context) => DistrictScreen(
                                           title:
                                               '${_name(snapshot.data[index])}',
                                           code: snapshot.data[index]

@@ -3,14 +3,14 @@ import 'package:covid_app/utilities/constants.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:covid_app/services/location_service.dart';
 import 'package:covid_app/services/coronavirus_service.dart';
-import 'package:covid_app/models/coronavirus_data.dart';
+import 'package:covid_app/models/covid_data.dart';
 import 'package:covid_app/components/stack_pie.dart';
 import 'package:covid_app/components/stats.dart';
 import 'package:covid_app/components/action_button.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:covid_app/screens/search_screen.dart';
 import 'package:covid_app/components/error_alert.dart';
-import 'package:covid_app/screens/stateswise.dart';
+import 'package:covid_app/screens/state_screen.dart';
 
 enum LocationSource { Global, Local, Search }
 
@@ -20,31 +20,31 @@ class StatsScreen extends StatefulWidget {
 }
 
 class _StatsScreenState extends State<StatsScreen> {
-  Future<CoronavirusData> futureCoronavirusData;
+  Future<CovidData> futureCoronavirusData;
   LocationSource locationSource = LocationSource.Global;
 
   @override
   void initState() {
     super.initState();
-   futureCoronavirusData= CoronavirusService().getLatestData();
+   futureCoronavirusData= CovidService().getLatestData();
   }
 
   void getData({String countryCode}) async {
     switch (locationSource) {
       case LocationSource.Global:
-        futureCoronavirusData = CoronavirusService().getLatestData();
+        futureCoronavirusData = CovidService().getLatestData();
         break;
       case LocationSource.Local:
         Placemark placemark = await LocationService().getPlacemark();
         setState(() {
           futureCoronavirusData =
-              CoronavirusService().getLocationDataFromPlacemark(placemark);
+              CovidService().getLocationDataFromPlacemark(placemark);
         });
         break;
       case LocationSource.Search:
         if (countryCode != null) {
           futureCoronavirusData =
-              CoronavirusService().getLocationDataFromCountryCode(countryCode);
+              CovidService().getLocationDataFromCountryCode(countryCode);
         }
         break;
     }
@@ -53,13 +53,10 @@ class _StatsScreenState extends State<StatsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(kAppBarMainTitle, style: kTextStyleAppBar,textAlign: TextAlign.center),
-      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-          child: FutureBuilder<CoronavirusData>(
+          child: FutureBuilder<CovidData>(
             future: futureCoronavirusData,
             builder: (context, snapshot) {
               switch (snapshot.connectionState) {
@@ -89,7 +86,7 @@ class _StatsScreenState extends State<StatsScreen> {
     );
   }
 
-  Column dataColumn({CoronavirusData coronavirusData}) {
+  Column dataColumn({CovidData coronavirusData}) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -118,24 +115,24 @@ class _StatsScreenState extends State<StatsScreen> {
           deadPercentage: coronavirusData.deadPercentage,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-
-//            ActionButton(
-//              icon: Icons.near_me,
-//              onPressed: () {
-//                setState(() {
-//                  locationSource = LocationSource.Local;
-//                  getData();
-//                });
-//              },
-//            ),
+           //
+           // ActionButton(
+           //   icon: Icons.near_me,
+           //   onPressed: () {
+           //     setState(() {
+           //       locationSource = LocationSource.Local;
+           //       getData();
+           //     });
+           //   },
+           // ),
             ActionButton(
               icon: Icons.language,
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => UserList()));
+                    MaterialPageRoute(builder: (context) => StateScreen()));
               },
             ),
           ],

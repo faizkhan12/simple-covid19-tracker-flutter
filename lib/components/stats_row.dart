@@ -21,9 +21,7 @@ class StatsRow extends StatelessWidget {
       children: <Widget>[
         ColourBox(colour: colour),
         Text('$label:', style: kTextStyleStats),
-        SizedBox(width: 4),
         Text('${kNumberFormat.format(number)}', style: kTextStyleStats),
-        SizedBox(width: 4),
         Text('(${percentage.toStringAsFixed(2)}%)', style: kTextStyleStats),
       ],
     );

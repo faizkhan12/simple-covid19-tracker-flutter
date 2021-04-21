@@ -4,17 +4,18 @@ import 'dart:convert';
 import 'package:covid_app/utilities/constants.dart';
 import 'package:covid_app/models/Districts.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-class DistrictPage extends StatefulWidget {
-  DistrictPage({Key key, this.title, this.code}) : super(key: key);
+
+class DistrictScreen extends StatefulWidget {
+  DistrictScreen({Key key, this.title, this.code}) : super(key: key);
 
   final String title;
   final String code;
 
   @override
-  DistrictPageState createState() => new DistrictPageState();
+  _DistrictScreenState createState() => new _DistrictScreenState();
 }
 
-class DistrictPageState extends State<DistrictPage> {
+class _DistrictScreenState extends State<DistrictScreen> {
   final String apiUrl = "https://api.covid19india.org/state_district_wise.json";
 
   Future<Map<dynamic, dynamic>> fetchUsers(String title) async {

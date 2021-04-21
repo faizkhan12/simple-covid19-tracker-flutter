@@ -58,7 +58,7 @@ const kTextStyleTotalNumber = TextStyle(
 );
 const kTextStyleStats = TextStyle(
   fontFamily: 'Courier-Prime-Bold',
-  fontSize: 21.0,
+  fontSize: 18.0,
 );
 const kTextStyleAlertTitle = TextStyle(
   fontFamily: 'Courier-Prime-Bold',
