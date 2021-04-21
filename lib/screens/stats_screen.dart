@@ -117,6 +117,7 @@ class _StatsScreenState extends State<StatsScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
+
            //
            // ActionButton(
            //   icon: Icons.near_me,
