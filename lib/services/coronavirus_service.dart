@@ -1,10 +1,10 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:covid_app/models/covid_data.dart';
+import 'package:tracker_app/models/covid_data.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:alpha2_countries/alpha2_countries.dart';
 import 'package:intl/intl.dart';
-import 'package:covid_app/models/Districts.dart';
+import 'package:tracker_app/models/Districts.dart';
 
 class CovidService {
   final baseUrl = 'https://api.covid19api.com/';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:covid_app/utilities/constants.dart';
+import 'package:tracker_app/utilities/constants.dart';
 import 'package:alpha2_countries/alpha2_countries.dart';
-import 'package:covid_app/components/error_alert.dart';
+import 'package:tracker_app/components/error_alert.dart';
 
 class SearchScreen extends StatefulWidget {
   @override

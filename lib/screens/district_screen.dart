@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:covid_app/utilities/constants.dart';
-import 'package:covid_app/models/Districts.dart';
+import 'package:tracker_app/utilities/constants.dart';
+import 'package:tracker_app/models/Districts.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class DistrictScreen extends StatefulWidget {

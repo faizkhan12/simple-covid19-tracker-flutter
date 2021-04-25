@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:covid_app/utilities/constants.dart';
-import 'package:covid_app/screens/stats_screen.dart';
+import 'package:tracker_app/utilities/constants.dart';
+import 'package:tracker_app/screens/stats_screen.dart';
 
 void main() => runApp(CoronavirusTracker());
 

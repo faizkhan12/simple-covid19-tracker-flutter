@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:covid_app/utilities/constants.dart';
+import 'package:tracker_app/utilities/constants.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class StackPie extends StatelessWidget {

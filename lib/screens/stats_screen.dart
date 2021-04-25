@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:covid_app/utilities/constants.dart';
+import 'package:tracker_app/utilities/constants.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:covid_app/services/location_service.dart';
-import 'package:covid_app/services/coronavirus_service.dart';
-import 'package:covid_app/models/covid_data.dart';
-import 'package:covid_app/components/stack_pie.dart';
-import 'package:covid_app/components/stats.dart';
-import 'package:covid_app/components/action_button.dart';
+import 'package:tracker_app/services/location_service.dart';
+import 'package:tracker_app/services/coronavirus_service.dart';
+import 'package:tracker_app/models/covid_data.dart';
+import 'package:tracker_app/components/stack_pie.dart';
+import 'package:tracker_app/components/stats.dart';
+import 'package:tracker_app/components/action_button.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:covid_app/screens/search_screen.dart';
-import 'package:covid_app/components/error_alert.dart';
-import 'package:covid_app/screens/state_screen.dart';
+import 'package:tracker_app/screens/search_screen.dart';
+import 'package:tracker_app/components/error_alert.dart';
+import 'package:tracker_app/screens/state_screen.dart';
 
 enum LocationSource { Global, Local, Search }
 

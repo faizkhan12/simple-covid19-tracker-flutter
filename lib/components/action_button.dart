@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:covid_app/utilities/constants.dart';
+import 'package:tracker_app/utilities/constants.dart';
 
 class ActionButton extends StatelessWidget {
   final IconData icon;

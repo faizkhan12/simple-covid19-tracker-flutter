@@ -1,4 +1,4 @@
-package com.faizkhan.covid_tracker
+package com.faizkhan.tracker
 import io.flutter.embedding.android.FlutterActivity
 
 class MainActivity: FlutterActivity() {

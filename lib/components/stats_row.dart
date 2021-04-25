@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:covid_app/components/color_box.dart';
-import 'package:covid_app/utilities/constants.dart';
+import 'package:tracker_app/components/color_box.dart';
+import 'package:tracker_app/utilities/constants.dart';
 
 class StatsRow extends StatelessWidget {
   final Color colour;
